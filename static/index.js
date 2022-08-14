@@ -55,3 +55,8 @@ canvas.addEventListener('mouseup', e => {
 });
 
 canvas.addEventListener('mousemove', draw);
+
+
+//////////////////////////Sockets.io//////////////////////////////////////////////
+
+const socket = io();    
