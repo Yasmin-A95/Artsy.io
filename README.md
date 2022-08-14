@@ -25,3 +25,4 @@ The project is still in beta stages.
 
 #### Soon to be Implemented 
 - websockets
+- redirecting from login
