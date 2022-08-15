@@ -117,8 +117,10 @@ app.post('/api/register', async (req, res) => {
 
 	res.json({ status: 'ok' })
 })
+const port = process.env.PORT || 3000;
 
-app.listen(3000, () => {
+
+app.listen(port, () => {
 	console.log('Server up at 3000')
 })
 /////////////////////////////
@@ -158,5 +160,7 @@ var webSocketFactory = {
     });
   }
 };
+
+
 
 var webSocket = webSocketFactory.connect("ws://localhost:8080/myContextRoot")
