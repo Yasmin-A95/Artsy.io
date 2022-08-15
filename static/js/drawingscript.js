@@ -1,5 +1,5 @@
 // -- init websockets
-let SERVER_URL = 'ws://artsyio.herokuapp.com';
+let SERVER_URL = 'wss://artsyio.herokuapp.com';
 let connection = new WebSocket(SERVER_URL);
 
 // -- init canvas
