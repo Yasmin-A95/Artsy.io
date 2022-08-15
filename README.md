@@ -23,7 +23,7 @@ The project is still in beta stages.
 - node.js
 - npm
 - yarn 
+- websockets
 
 #### Soon to be Implemented 
-- websockets
 - redirecting from login
