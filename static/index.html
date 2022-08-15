@@ -1,48 +1,19 @@
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <title>Hello!</title>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-    <title>Drawing app</title>
-</head>
-
-<body>
-
-    <div id="outter-most-container">
-        <section class="container">
-                <div id="toolbar">
-                    <h1>Draw.</h1>
-                    <label for="stroke">Stroke</label>
-                    <input id="stroke" name='stroke' type="color">
-                    <label for="lineWidth">Line Width</label>
-                    <input id="lineWidth" name='lineWidth' type="number" value="5">
-                    <button id="clear">Clear</button>
-                </div>
-                <div class="drawing-board">
-                    <canvas id="drawing-board"></canvas>
-                </div>
-        </section>
-        </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 7cc5ad06284b634a12a516d5b8f90c744c1a0d1e
-        <div class="drawing-board">
-            <canvas id="drawing-board"></canvas>
-        </div>
-    </section>
-<<<<<<< HEAD
-    <script src="index.js"></script>
-=======
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="style.css">
+  </head>  
+  <body>
+    Color: <input id="color" value="pink">
+    Width: <input id="width" type="number" value="10">
+    <div id="canvas-container">
+      <canvas></canvas>
     </div>
-    <script src="./js/index.js"></script>
-    <!-- <script src="/socket.io/socket.io.js"></script> -->
->>>>>>> c3bb87e761d3a96ca40a6cb84b4f51fd9f46236f
-=======
-    <script src="/index.js"> </script>
->>>>>>> 7cc5ad06284b634a12a516d5b8f90c744c1a0d1e
-</body>
-
+    <script src="js/drawingscript.js"></script>
+  </body>
 </html>
