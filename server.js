@@ -1,3 +1,6 @@
+var mongoose = require(‘mongoose’);
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/artsyio'); /// this two lines are just for deployment purposes 
+
 const express = require('express') // creates routes, similar to sinatra but for javaScript - however it ONLY does routes, manual http (headers, content type, parse data that comes in)
 const path = require('path')
 const bodyParser = require('body-parser') // middleware - this parses any data (json) from the browser to the httpserver (express in this case), and that's passed here! The middleware
