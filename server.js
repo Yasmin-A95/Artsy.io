@@ -115,45 +115,39 @@ app.post('/api/register', async (req, res) => {
 	res.json({ status: 'ok' })
 })
 
-app.listen(3000, () => {
-	console.log('Server up at 3000')
-})
+
 /////////////////////////////
 
-const WebSocket = require('ws');
-const server = new WebSocket.Server({ port: 8080 });
+// two seperate deployments??
 
-server.on('connection', ws => {
+// http 
+// and 
+// websocket
+
+// they both need the port variable
+
+var http = require("http")
+var port = process.env.PORT || 5000
+var server = http.createServer(app)
+server.listen(port)
+// express is built ontop of nodes http server, I'm creating a normal node http server and then inserting the express app into it
+
+// websockets knows how to connect to the node server, it doesnt know how to connect to express
+
+// if i give it to websockets websockets happy
+const WebSocket = require('ws');
+const wss = new WebSocket.Server({ server:server });
+
+
+wss.on('connection', ws => {
   console.log('A client has connected');
   
   ws.on('message', message => {
     message = message.toString();
     console.log(message);
     
-    server.clients.forEach(c => {
+    wss.clients.forEach(c => {
       c.send(message);
     });
   });
 });
-
-var webSocketFactory = {
-  connectionTries: 3,
-  connect: function(url) {
-    var ws = new WebSocket(url);
-    ws.addEventListener("error", e => {
-      // readyState === 3 is CLOSED
-      if (e.target.readyState === 3) {
-        this.connectionTries--;
-
-        if (this.connectionTries > 0) {
-          setTimeout(() => this.connect(url), 5000);
-        } else {
-          throw new Error("Maximum number of connection trials has been reached");
-        }
-
-      }
-    });
-  }
-};
-
-var webSocket = webSocketFactory.connect("ws://localhost:8080/myContextRoot")

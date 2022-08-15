@@ -1,5 +1,5 @@
 // -- init websockets
-let SERVER_URL = 'ws://localhost:8080';
+let SERVER_URL = `ws://${document.location.host}`;
 let connection = new WebSocket(SERVER_URL);
 
 // -- init canvas
