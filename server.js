@@ -118,6 +118,7 @@ app.post('/api/register', async (req, res) => {
 app.listen(3000, () => {
 	console.log('Server up at 3000')
 })
+/////////////////////////////
 
 const WebSocket = require('ws');
 const server = new WebSocket.Server({ port: 8080 });
