@@ -1,3 +1,4 @@
+
 const express = require('express') // creates routes, similar to sinatra but for javaScript - however it ONLY does routes, manual http (headers, content type, parse data that comes in)
 const path = require('path')
 const bodyParser = require('body-parser') // middleware - this parses any data (json) from the browser to the httpserver (express in this case), and that's passed here! The middleware
@@ -8,7 +9,9 @@ const jwt = require('jsonwebtoken')
 
 const JWT_SECRET = 'sdjkfh8923yhjdksbfma@#*(&@*!^#&@bhjb2qiuhesdbhjdsfg839ujkdhfjk'
 
-mongoose.connect('mongodb://localhost:27017/login-app-db', { // create a connection with the mongodb database at this url // wtf are we going to do at the point of deployment.. this needs to be turned into an environment variable so that we can deploy.. something about a hostedmongodb service.. (mongodb atlas?)
+mongoose.connect('mongodb://localhost:27017/login-app-db', { // paste the link after sign up here - then later also move this into environment variables ??? but the password tho. This seems incorrect. 
+	
+// create a connection with the mongodb database at this url // wtf are we going to do at the point of deployment.. this needs to be turned into an environment variable so that we can deploy.. something about a hostedmongodb service.. (mongodb atlas?)
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useCreateIndex: true
@@ -18,7 +21,12 @@ const app = express() // creating the http server (express)
 app.use('/', express.static(path.join(__dirname, 'static'))) // app.use means use this thing as middleware *this might have an error, this looks like it only works for the root route, investigate*
 app.use(bodyParser.json()) // configuring the parser
 
-
+var http = require("http")
+var port = process.env.PORT || 5000
+// the above two can be moved but the below must stay put
+var server = http.createServer(app)
+server.listen(port)
+/// the above creates a server that websockets and express can connect to - it's the server for our app // it's basically app.listen but is more compatible with everything we have going on
 
 app.post('/api/change-password', async (req, res) => { // like sinatra routes and/or rails (but routes and controllers combined into one thing)
 	const { token, newpassword: plainTextPassword } = req.body // this is our params equivilent - this is object destructuring the object parsed from JSON - body parser turned it into a javascript object!
@@ -126,10 +134,7 @@ app.post('/api/register', async (req, res) => {
 
 // they both need the port variable
 
-var http = require("http")
-var port = process.env.PORT || 5000
-var server = http.createServer(app)
-server.listen(port)
+
 // express is built ontop of nodes http server, I'm creating a normal node http server and then inserting the express app into it
 
 // websockets knows how to connect to the node server, it doesnt know how to connect to express
