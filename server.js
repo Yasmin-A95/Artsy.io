@@ -123,7 +123,7 @@ const port = process.env.PORT || 3000;
 /////////////////////////////
 
 const WebSocket = require('ws');
-const server = new WebSocket.Server({ server: app });
+const server = new WebSocket.Server({ port: process.env.PORT || 8080 });
 
 server.on('connection', ws => {
   console.log('A client has connected');
