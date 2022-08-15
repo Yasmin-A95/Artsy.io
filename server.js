@@ -120,9 +120,6 @@ app.post('/api/register', async (req, res) => {
 const port = process.env.PORT || 3000;
 
 
-app.listen(port, () => {
-	console.log('Server up at 3000')
-})
 /////////////////////////////
 
 const WebSocket = require('ws');
@@ -140,6 +137,11 @@ server.on('connection', ws => {
     });
   });
 });
+
+app.listen(port, () => {
+	console.log('Server up at 3000')
+})
+
 
 var webSocketFactory = {
   connectionTries: 3,
