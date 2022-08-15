@@ -35,7 +35,7 @@ app.post('/api/change-password', async (req, res) => { // like sinatra routes an
 	}
 
 	try { // try block, try to do these things...
-		const user = jwt.verify(token, JWT_SECRET) // what are this?? a way of encoding a users session but how does it work - i do not know // JWT = magic that says this person is logged in and all is well
+		const user = jwt.verify(token, JWT_SECRET) // what are this?? a way of encoding a users session but how does it work - i do not know // JWT = magic that says this person is logged in and all is well this is to 
 
 		const _id = user.id // JWT's store small things like user.id
 
