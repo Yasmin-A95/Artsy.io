@@ -126,7 +126,7 @@ app.listen(port, () => {
 /////////////////////////////
 
 const WebSocket = require('ws');
-const server = new WebSocket.Server({ port: port });
+const server = new WebSocket.Server({ server: app });
 
 server.on('connection', ws => {
   console.log('A client has connected');
