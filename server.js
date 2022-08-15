@@ -163,4 +163,4 @@ var webSocketFactory = {
 
 
 
-var webSocket = webSocketFactory.connect("ws://localhost:8080/myContextRoot")
+//var webSocket = webSocketFactory.connect("ws://localhost:8080/myContextRoot")
