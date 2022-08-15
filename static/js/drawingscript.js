@@ -1,5 +1,5 @@
 // -- init websockets
-let SERVER_URL = document.location.protocol === 'https' ?  `wss://${document.location.host}` : `ws://${document.location.host}`;
+let SERVER_URL = window.location.protocol === 'https:' ?  `wss://${window.location.host}` : `ws://${window.location.host}`;
 let connection = new WebSocket(SERVER_URL);
 
 // -- init canvas
