@@ -115,6 +115,6 @@ app.post('/api/register', async (req, res) => {
 	res.json({ status: 'ok' })
 })
 
-app.listen(9999, () => {
-	console.log('Server up at 9999')
+app.listen(3000, () => {
+	console.log('Server up at 3000')
 })
