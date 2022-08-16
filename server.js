@@ -122,27 +122,29 @@ const port = process.env.PORT || 3000;
 
 /////////////////////////////
 
-const WebSocket = require('ws');
-// const server = new WebSocket.Server({ port: process.env.PORT || 8080 });
-const server = new WebSocket.Server({ server: app });
+const server = require('http').createServer();
 
-server.on('connection', ws => {
+const WebSocket = require('ws');
+const socketServer = new WebSocket.Server({ server:server });
+
+socketServer.on('connection', ws => {
   console.log('A client has connected');
   
   ws.on('message', message => {
     message = message.toString();
     console.log(message);
     
-    server.clients.forEach(c => {
+    socketServer.clients.forEach(c => {
       c.send(message);
     });
   });
 });
 
-app.listen(port, () => {
+server.listen(port, () => {
 	console.log('Server up at 3000')
 })
 
+server.on('request', app);
 
 var webSocketFactory = {
   connectionTries: 3,

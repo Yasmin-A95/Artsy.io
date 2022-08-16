@@ -1,5 +1,5 @@
 // -- init websockets
-let SERVER_URL = 'ws://localhost:8080'; //location.origin.replace(/^http/, 'ws');
+let SERVER_URL = location.origin.replace(/^http/, 'ws');
 let connection = new WebSocket(SERVER_URL);
 
 // -- init canvas
