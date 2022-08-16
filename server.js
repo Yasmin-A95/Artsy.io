@@ -23,7 +23,7 @@ app.use(bodyParser.json()) // configuring the parser
 
 
 
-app.post('/api/change-password', async (req, res) => { // like sinatra routes and/or rails (but routes and controllers combined into one thing)
+app.post('/change-password', async (req, res) => { // like sinatra routes and/or rails (but routes and controllers combined into one thing)
 	const { token, newpassword: plainTextPassword } = req.body // this is our params equivilent - this is object destructuring the object parsed from JSON - body parser turned it into a javascript object!
 
 	if (!plainTextPassword || typeof plainTextPassword !== 'string') {
@@ -57,7 +57,7 @@ app.post('/api/change-password', async (req, res) => { // like sinatra routes an
 	}
 })
 
-app.post('/api/login', async (req, res) => {
+app.post('/login', async (req, res) => {
 	const { username, password } = req.body
 	const user = await User.findOne({ username }).lean()
 
@@ -82,7 +82,7 @@ app.post('/api/login', async (req, res) => {
 	res.json({ status: 'error', error: 'Invalid username/password' })
 })
 
-app.post('/api/register', async (req, res) => {
+app.post('/register', async (req, res) => {
 	const { username, password: plainTextPassword } = req.body
 
 	if (!username || typeof username !== 'string') {
@@ -159,7 +159,6 @@ var webSocketFactory = {
         } else {
           throw new Error("Maximum number of connection trials has been reached");
         }
-
       }
     });
   }
