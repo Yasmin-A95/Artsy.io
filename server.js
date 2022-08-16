@@ -159,6 +159,7 @@ var webSocketFactory = {
         } else {
           throw new Error("Maximum number of connection trials has been reached");
         }
+
       }
     });
   }
