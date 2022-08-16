@@ -132,7 +132,6 @@ socketServer.on('connection', ws => {
   
   ws.on('message', message => {
     message = message.toString();
-    console.log(message);
     
     socketServer.clients.forEach(c => {
       c.send(message);
