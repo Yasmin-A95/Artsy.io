@@ -1,4 +1,6 @@
 
+
+const dotenv = require('dotenv').config()
 const express = require('express') // creates routes, similar to sinatra but for javaScript - however it ONLY does routes, manual http (headers, content type, parse data that comes in)
 const path = require('path')
 const bodyParser = require('body-parser') // middleware - this parses any data (json) from the browser to the httpserver (express in this case), and that's passed here! The middleware
@@ -9,9 +11,7 @@ const jwt = require('jsonwebtoken')
 
 const JWT_SECRET = 'sdjkfh8923yhjdksbfma@#*(&@*!^#&@bhjb2qiuhesdbhjdsfg839ujkdhfjk'
 
-mongoose.connect('mongodb://localhost:27017/login-app-db', { // paste the link after sign up here - then later also move this into environment variables ??? but the password tho. This seems incorrect. 
-	
-// create a connection with the mongodb database at this url // wtf are we going to do at the point of deployment.. this needs to be turned into an environment variable so that we can deploy.. something about a hostedmongodb service.. (mongodb atlas?)
+mongoose.connect(process.env.DATABASE_URI || 'mongodb://localhost:27017/login-app-db', { // create a connection with the mongodb database at this url // wtf are we going to do at the point of deployment.. this needs to be turned into an environment variable so that we can deploy.. something about a hostedmongodb service.. (mongodb atlas?)
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useCreateIndex: true
@@ -122,37 +122,54 @@ app.post('/api/register', async (req, res) => {
 
 	res.json({ status: 'ok' })
 })
+const port = process.env.PORT || 3000;
 
 
 /////////////////////////////
 
-// two seperate deployments??
+const server = require('http').createServer();
 
-// http 
-// and 
-// websocket
-
-// they both need the port variable
-
-
-// express is built ontop of nodes http server, I'm creating a normal node http server and then inserting the express app into it
-
-// websockets knows how to connect to the node server, it doesnt know how to connect to express
-
-// if i give it to websockets websockets happy
 const WebSocket = require('ws');
-const wss = new WebSocket.Server({ server:server });
+const socketServer = new WebSocket.Server({ server:server });
 
-
-wss.on('connection', ws => {
+socketServer.on('connection', ws => {
   console.log('A client has connected');
   
   ws.on('message', message => {
     message = message.toString();
     
-    
-    wss.clients.forEach(c => {
+    socketServer.clients.forEach(c => {
       c.send(message);
     });
   });
 });
+
+server.listen(port, () => {
+	console.log('Server up at 3000')
+})
+
+server.on('request', app);
+
+var webSocketFactory = {
+  connectionTries: 3,
+  connect: function(url) {
+    var ws = new WebSocket(url);
+    ws.addEventListener("error", e => {
+      // readyState === 3 is CLOSED
+      if (e.target.readyState === 3) {
+        this.connectionTries--;
+
+        if (this.connectionTries > 0) {
+          setTimeout(() => this.connect(url), 5000);
+        } else {
+          throw new Error("Maximum number of connection trials has been reached");
+        }
+
+      }
+    });
+  }
+};
+
+
+
+var webSocket = webSocketFactory.connect("ws://localhost:" + (process.env.PORT || 8080) + "/myContextRoot")
