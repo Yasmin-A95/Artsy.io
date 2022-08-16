@@ -1,5 +1,5 @@
 // -- init websockets
-let SERVER_URL = 'ws://localhost:8080';
+let SERVER_URL = window.location.protocol === 'https:' ?  `wss://${window.location.host}` : `ws://${window.location.host}`; // locally im running on http not https (Secure) - websockets has a secure version as well, so theres a normal ver and a secure ver - when we were trying to just use ws rather than wss heroku was mad because heroku gives us a secure connection, so we had one thing that was encrypted messing with something that's not encrypted, so line two checks to see if we're on a seucre connection, if we are it uses ws and if not it uses a wss
 let connection = new WebSocket(SERVER_URL);
 
 // -- init canvas
