@@ -22,7 +22,7 @@ async function login(event) {
         // everythign went fine
         console.log('Got the token: ', result.data)
         localStorage.setItem('token', result.data)
-        alert('Success')
+        window.location.href = "https://artsyio.herokuapp.com/";
     } else {
         alert(result.error)
     }
