@@ -1,11 +1,3 @@
-/* body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-    color: white;
-} */
-
 .outter-most-container {
     margin: 0 auto;
     max-width: 950px;
@@ -15,56 +7,32 @@
     margin: 0 auto;
     max-width: 960px;
 }
-/* 
-h1 {
-    background: #7F7FD5;
-    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
-    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
 
-.container {
-    height: 100%;
-    display: flex;
+#tools {
+    background-color: yellow;
+    top: 120px;
+    left: 30px;
+  
 }
-
-#toolbar {
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    width: 70px;
-    background-color: #202020;
+.toolinput{
+    display: block;
 }
-
-#toolbar * {
-    margin-bottom: 6px;
+#canvas-outside-container{
+    max-width: 1000px;
+    margin: 0 auto;
 }
-
-#toolbar label {
-    font-size: 12px;
+#canvas-container{
+  margin: 0 auto;
+  background-color: aquamarine;
+    max-width: 960px;
+    max-height: 75%;
 }
-
-#toolbar input {
-    width: 100%;
-}
-
-#toolbar button {
-    background-color: #1565c0;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    padding: 2px;
-}
-
-.drawing-board {
-    background-color: pink;
-    padding-left: 0;
-    padding-right: 0;
+#canvas-inside-container{
     margin-left: auto;
     margin-right: auto;
+    max-width: 800px;
+    padding-left: 0;
+    padding-right: 0;
     display: block;
-    width: 800px;
 }
- */
+
