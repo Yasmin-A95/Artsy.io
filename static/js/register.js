@@ -19,7 +19,7 @@ async function registerUser(event) {
 
     if (result.status === 'ok') {
         // everythign went fine
-        alert('Success')
+        window.location.href = "https://artsyio.herokuapp.com/" // rerout
     } else {
         alert(result.error)
     }
