@@ -10,6 +10,7 @@ let rooms = {};
 
 wss.on('connection', function connection(ws) {
   ws.on('message', function message(data) {
+    console.log("hello woeld")
     const obj = JSON.parse(data);
     const type = obj.type;
     const params = obj.params;
@@ -57,6 +58,7 @@ function generalInformation(ws) {
 }
 
 function create(params) {
+  console.log('function called.')
   const room = genKey(5);
   console.log(room);
   rooms[room] = [ws];
@@ -89,6 +91,8 @@ function join(params) {
     return;
   }
 
+
+  
   rooms[room].push(ws);
   ws["room"] = room;
 
