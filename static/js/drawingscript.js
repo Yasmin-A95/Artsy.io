@@ -39,7 +39,6 @@ canvas.addEventListener("mousemove", e => {
 
 // -- on message from server
 connection.onmessage = e => {
-  console.log(document.querySelector("#color").value)
   let msg = JSON.parse(e.data);
 
   ctx.beginPath();
