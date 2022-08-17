@@ -51,7 +51,6 @@ connection.onmessage = e => {
   ctx.moveTo(msg.lastX, msg.lastY);
   ctx.lineTo(msg.x, msg.y);
   ctx.stroke();
-  console.log(msg)
 };
 
 // -- change cursor

@@ -30,7 +30,6 @@ socketServer.on('connection', ws => {
     message = message.toString();
     
     socketServer.clients.forEach(c => {
-		// console.log(message) | output: {"x":256,"y":75,"lastX":256,"lastY":75,"width":"10","color":"hsl(146 80% 50%)"}
       c.send(message);
     });
   });
