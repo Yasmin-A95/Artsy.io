@@ -1,15 +1,8 @@
-
-
 const dotenv = require('dotenv').config()
-const express = require('express') // creates routes, similar to sinatra but for javaScript - however it ONLY does routes, manual http (headers, content type, parse data that comes in)
+const express = require('express') // creates our routes
 const path = require('path')
-const bodyParser = require('body-parser') // middleware - this parses any data (json) from the browser to the httpserver (express in this case), and that's passed here! The middleware
-const mongoose = require('mongoose')
-const User = require('./model/user')
-const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
-
-const JWT_SECRET = 'sdjkfh8923yhjdksbfma@#*(&@*!^#&@bhjb2qiuhesdbhjdsfg839ujkdhfjk'
+const bodyParser = require('body-parser') //  middleware, parses json to express
+const mongoose = require('mongoose') // db
 
 mongoose.connect(process.env.DATABASE_URI || 'mongodb://localhost:27017/login-app-db', { // create a connection with the mongodb database at this url // wtf are we going to do at the point of deployment.. this needs to be turned into an environment variable so that we can deploy.. something about a hostedmongodb service.. (mongodb atlas?)
 	useNewUrlParser: true,
@@ -19,8 +12,9 @@ mongoose.connect(process.env.DATABASE_URI || 'mongodb://localhost:27017/login-ap
 
 const app = express() // creating the http server (express)
 app.use('/', express.static(path.join(__dirname, 'static'))) // app.use means use this thing as middleware *this might have an error, this looks like it only works for the root route, investigate*
-app.use(bodyParser.json()) // configuring the parser
+app.use(bodyParser.json()) // giving app the parser
 
+<<<<<<< HEAD
 var http = require("http")
 var port = process.env.PORT || 5000
 // the above two can be moved but the below must stay put
@@ -122,10 +116,11 @@ app.post('/api/register', async (req, res) => {
 
 	res.json({ status: 'ok' })
 })
+=======
+>>>>>>> richerCanvas
 const port = process.env.PORT || 3000;
 
 
-/////////////////////////////
 
 const server = require('http').createServer();
 
@@ -150,26 +145,10 @@ server.listen(port, () => {
 
 server.on('request', app);
 
-var webSocketFactory = {
-  connectionTries: 3,
-  connect: function(url) {
-    var ws = new WebSocket(url);
-    ws.addEventListener("error", e => {
-      // readyState === 3 is CLOSED
-      if (e.target.readyState === 3) {
-        this.connectionTries--;
-
-        if (this.connectionTries > 0) {
-          setTimeout(() => this.connect(url), 5000);
-        } else {
-          throw new Error("Maximum number of connection trials has been reached");
-        }
-
-      }
-    });
-  }
-};
 
 
+<<<<<<< HEAD
 
 var webSocket = webSocketFactory.connect("ws://localhost:" + (process.env.PORT || 8080) + "/myContextRoot")
+=======
+>>>>>>> richerCanvas

@@ -7,12 +7,13 @@ let canvas = document.querySelector("canvas");
 let ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-
 // -- set random color
 let hue = Math.random() * 360; // 0-360
 hue = Math.floor(hue);
 let color = `hsl(${hue} 80% 50%)`;
 document.querySelector("#color").value = color;
+
+// {"x":256,"y":75,"lastX":256,"lastY":75,"width":"10","color":"hsl(146 80% 50%)"}
 
 let lastX, lastY;
 
@@ -38,6 +39,7 @@ canvas.addEventListener("mousemove", e => {
 
 // -- on message from server
 connection.onmessage = e => {
+  console.log(document.querySelector("#color").value)
   let msg = JSON.parse(e.data);
 
   ctx.beginPath();
