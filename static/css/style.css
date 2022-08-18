@@ -36,3 +36,7 @@
     display: block;
 }
 
+ canvas {
+    background-color: pink;
+ }
+

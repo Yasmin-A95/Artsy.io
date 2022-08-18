@@ -1,5 +1,5 @@
 // -- init websockets
-let SERVER_URL = window.location.protocol === 'https:' ?  `wss://${window.location.host}` : `ws://${window.location.host}`; // locally im running on http not https (Secure) - websockets has a secure version as well, so theres a normal ver and a secure ver - when we were trying to just use ws rather than wss heroku was mad because heroku gives us a secure connection, so we had one thing that was encrypted messing with something that's not encrypted, so line two checks to see if we're on a seucre connection, if we are it uses ws and if not it uses a wss
+let SERVER_URL = location.origin.replace(/^http/, 'ws');
 let connection = new WebSocket(SERVER_URL);
 
 // -- init canvas
@@ -7,12 +7,13 @@ let canvas = document.querySelector("canvas");
 let ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-
 // -- set random color
 let hue = Math.random() * 360; // 0-360
 hue = Math.floor(hue);
 let color = `hsl(${hue} 80% 50%)`;
 document.querySelector("#color").value = color;
+
+// {"x":256,"y":75,"lastX":256,"lastY":75,"width":"10","color":"hsl(146 80% 50%)"}
 
 let lastX, lastY;
 
