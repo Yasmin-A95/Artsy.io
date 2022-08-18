@@ -4,13 +4,12 @@
 <head>
   <title>Hello!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   Color: <input id="color" value="pink" type="color">
-  Width: <input id="width" type="number" value="10">
+  Width: <input id="width" type="range" min="0" max="100" value="90" step="10">
 
   <label for="tool-select">Tool:&nbsp;</label>
   <select class="custom-select" id="tool-select">

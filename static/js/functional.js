@@ -23,6 +23,7 @@ function makeMessage(x, y) {
 function receiveMessages(messageEvent, ctx) {
     let message = JSON.parse(messageEvent.data);
     draw(message, ctx);
+    console.log(message)
 };
 
 
@@ -31,7 +32,7 @@ function sendMessage(message, connection) {
 };
 
 
-function draw (message, ctx) {
+function draw(message, ctx) {
     if (message.tool === "line") {
     drawLine(message, ctx)
     } else if (message.tool === "spray") {
@@ -49,12 +50,13 @@ function drawLine(message, ctx) {
     ctx.lineCap = "round";
     ctx.lineWidth = message.width;
     ctx.strokeStyle = message.color;
+
     ctx.moveTo(message.lastX, message.lastY);
     ctx.lineTo(message.x, message.y);
     ctx.stroke();
 };
 
-function sprayPaint (message, ctx) {
+function sprayPaint(message, ctx) {
     // have it be like line except instead of a block space its a radius where pixels are selected at random within said radius
     // make a radius based on width
     // dots
@@ -93,3 +95,4 @@ function erase(message, ctx) {
 //         console.log(pos)
 //     }
 // }
+
