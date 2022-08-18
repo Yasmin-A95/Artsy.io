@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hello!</title>
+  <title>Artsy.io</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -9,34 +9,30 @@
 
 
 <div id="homePageContainer">
-  	<h1 class='headinghome'>Wellcome to Canvas</h1>
-	<!-- Background image -->
-    <img class="bg-image" src="assets/art-img.jpeg" alt="A colourful, abstract, and textured image of a painting.">
-	<br>
-	<!-- Background image -->
+  <h1 class='headinghome'>Wellcome to Canvas</h1>
+  <img class="bg-image" src="assets/art-img.jpeg" alt="A colourful, abstract, and textured image of a painting.">
+
 	<div class="homepage">
-		<p>
-		Welcome to artsy.io the collaborative drawing space, click through to canvas or make a private room
-		</p>
-    </div>
-	<button class="btn" id="button"  onclick="revelHandlerBtn()" >Click Me to Start</button>
-</div>
+		<p> Welcome to artsy.io the collaborative drawing space, click through to canvas </p>
+  </div>
+	<button class="btn" id="button" onclick="toggleHidden()"> Click Me to Start </button>
+  </div>
 <div id="canvas-page" class="hidden">
 
 	<!-- //////// -->
 	Color: <input id="color" value="pink" type="color">
   Width: <input id="width" type="range" min="0" max=“100” value="90" step="10">
 
-  	<label for="tool-select">Tool:&nbsp;</label>
+  <label for="tool-select">Tool:&nbsp;</label>
  	<select class="custom-select" id="tool-select">
-    	<option value="line">Line</option>
-		<option value="erase">Erase</option>
-		<option value="spray">Spray</option>
-  	</select>
+  <option value="line">Line</option>
+	<option value="erase">Erase</option>
+	<option value="spray">Spray</option>
+  </select>
 
-  	<canvas></canvas>
+  <canvas></canvas>
 
-	<p><b id="roomId"></b></p>
+	<p id="roomId"></p>
 	<button onclick="create()">Create</button>
 	<button onclick="join()">Join</button>
   <input type="text" name="room-code" id="room-code" placeholder="room key" required>

@@ -1,4 +1,4 @@
-    let SERVER_URL = location.origin.replace(/^http/, 'ws');
+let SERVER_URL = location.origin.replace(/^http/, 'ws');
 let connection = new WebSocket(SERVER_URL);
 // initialise the important big things
 let canvas = document.querySelector("canvas");
@@ -66,7 +66,7 @@ connection.onmessage = e => {
 };
 
 //
-function revelHandlerBtn(){
+function toggleHidden(){
     $("#homePageContainer").addClass('hidden')
     $("#canvas-page").removeClass('hidden')
 }  
