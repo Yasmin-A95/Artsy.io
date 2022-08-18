@@ -39,6 +39,8 @@ function draw (message, ctx) {
         sprayPaint(message, ctx)
     } else if (message.tool === "erase") {
         erase(message, ctx)
+    } else if (message.tool === "text") {
+        text(message, cxt)
     }
 };
 
@@ -68,8 +70,8 @@ function sprayPaint (message, ctx) {
 
 function randomPointInRadius(radius) {
     while (true) { // what the fuck is this
-        var x = Math.random() * 2 - 1;
-        var y = Math.random() * 2 - 1;
+        let x = Math.random() * 2 - 1;
+        let y = Math.random() * 2 - 1;
         if (x * x + y * y <= 1)
             return {x: x * radius, y: y * radius};
     }
@@ -85,3 +87,11 @@ function erase(message, ctx) {
     ctx.lineTo(message.x, message.y);
     ctx.stroke();
 }
+
+// function text(message, ctx) {
+//     let text = prompt("Text:", "");
+//     if (text) {
+//         let ctx.beginPath(message.x)
+//         console.log(pos)
+//     }
+// }
