@@ -1,63 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <title>Hello!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-  Color: <input id="color" value="pink" type="color">
-  Width: <input id="width" type="number" value="10">
+welcoming
+<div id="homePageContainer">
+  	<h1 class='headinghome'>Wellcome to Canvas</h1>
+	<!-- Background image -->
+	<div class="bg-image"></div>
+	<br>
+	<!-- Background image -->
+	<div class="homepage">
+		<p>
+		Welcome to artsy.io the collaborative drawing space, click through to canvas or make a private room
+		</p>
+    </div>
+	<button class="btn" id="button"  onclick="revelHandlerBtn()" >Click Me to Start</button>
+</div>
+<div id="canvas-page" class="hidden">
+    <!-- <canvas></canvas>
+    <div id="tools">
+      Color: <input id="color" class="toolinput" value="pink">
+      Width: <input id="width" class="toolinput" type="number" value="10">
+  </div> -->
 
-  <label for="tool-select">Tool:&nbsp;</label>
-  <select class="custom-select" id="tool-select">
-    <option value="line">Line</option>
-    <option value="erase">Erase</option>
-    <option value="spray">Spray</option>
-  </select>
+	<script>
+		function revelHandlerBtn(){
+			console.log("click")
+			$("#homePageContainer").addClass('hidden')
+			$("#canvas-page").removeClass('hidden')
+		}  
+	</script>
 
-  <canvas></canvas>
 
-  <p><b id="roomId"></b></p>
-  <button onclick="create()">Create</button>
-  <input type="text" name="room-code" id="room-code">
-  <button onclick="join()">Join</button>
-  <button onclick="leave()">Leave</button>
-  
 
-  <script>
-    var roomId = undefined
-    const ws = new WebSocket("ws://localhost:3000");
 
-    ws.onopen = function (event) {}
 
-    ws.onmessage = function (event) {
-        console.log(event.data);
-        const data = JSON.parse(event.data)
-        if (data && data.params && data.params.room){
-          document.getElementById("roomId").innerText = data["params"]["room"];
-          roomId = data.params.room;
-        };
-       
-    }
+	<!-- //////// -->
+	Color: <input id="color" value="pink" type="color">
+	Width: <input id="width" type="number" value="10">
 
-    function create() { ws.send('{ "type": "create" }'); }  //ws.send communicates with the server(rooms.js)
+  	<label for="tool-select">Tool:&nbsp;</label>
+ 	<select class="custom-select" id="tool-select">
+    	<option value="line">Line</option>
+		<option value="erase">Erase</option>
+		<option value="spray">Spray</option>
+  	</select>
 
-    function join() {
-        const code = document.getElementById("room-code").value;
-        const obj = { "type": "join" , "params": { "code": code }}
-        ws.send(JSON.stringify(obj));
-        roomId = code
-    }
+  	<canvas></canvas>
 
-    function leave() { ws.send('{ "type": "leave" }'); }
-</script>
+	<p><b id="roomId"></b></p>
+	<button onclick="create()">Create</button>
+	<input type="text" name="room-code" id="room-code">
+	<button onclick="join()">Join</button>
+	<button onclick="leave()">Leave</button>
+	
 
-  <script src="js/jQuery.js"></script>
-  <script src="js/functional.js"></script>
-  <script src="js/app.js"></script>
+	<script>
+		var roomId = undefined
+		const ws = new WebSocket("ws://localhost:3000");
+
+		ws.onopen = function (event) {}
+
+		ws.onmessage = function (event) {
+			console.log(event.data);
+			const data = JSON.parse(event.data)
+			if (data && data.params && data.params.room){
+			document.getElementById("roomId").innerText = data["params"]["room"];
+			roomId = data.params.room;
+			};
+		
+		}
+
+		function create() { ws.send('{ "type": "create" }'); }  //ws.send communicates with the server(rooms.js)
+
+		function join() {
+			const code = document.getElementById("room-code").value;
+			const obj = { "type": "join" , "params": { "code": code }}
+			ws.send(JSON.stringify(obj));
+			roomId = code
+		}
+
+		function leave() { ws.send('{ "type": "leave" }'); }
+	</script>
+</div>
+<!--  end welcoming css  -->
+
+<script src="js/jQuery.js"></script>
+<script src="js/functional.js"></script>
+<script src="js/app.js"></script>
 
 </body>
 

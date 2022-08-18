@@ -1,6 +1,4 @@
-$( document ).ready(function() {
-    
-let SERVER_URL = location.origin.replace(/^http/, 'ws');
+    let SERVER_URL = location.origin.replace(/^http/, 'ws');
 let connection = new WebSocket(SERVER_URL);
 // initialise the important big things
 let canvas = document.querySelector("canvas");
@@ -65,5 +63,4 @@ canvas.addEventListener("mousemove", handleMouseMove);
 connection.onmessage = e => {
     receiveMessages(e, ctx);
 };
-});
 

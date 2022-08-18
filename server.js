@@ -11,6 +11,7 @@ mongoose.connect(process.env.DATABASE_URI || 'mongodb://localhost:27017/login-ap
 })
 
 const app = express() // creating the http server (express)
+
 app.use('/', express.static(path.join(__dirname, 'static'))) 
 app.use(bodyParser.json()) // giving app the parser
 
