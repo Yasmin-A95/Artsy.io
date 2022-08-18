@@ -8,6 +8,7 @@ function makeMessage(x, y) {
             color: $("#color").val(),
             room:roomId
         }
+        console.log(message)
         return message;
     } 
     let message = {
@@ -25,7 +26,7 @@ function makeMessage(x, y) {
 function receiveMessages(messageEvent, ctx) {
     let message = JSON.parse(messageEvent.data);
     console.log(message, roomId)
-    if (message.room === roomId )  {
+    if (message.room === roomId)  {
     
     draw(message, ctx);
    }
@@ -49,6 +50,8 @@ function draw(message, ctx) {
         erase(message, ctx)
     } else if (message.tool === "text") {
         text(message, cxt)
+    } else {
+        drawLine(message, ctx)
     }
 };
 

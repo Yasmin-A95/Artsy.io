@@ -1,74 +1,54 @@
-/* body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-    color: white;
-} */
-
 .outter-most-container {
     margin: 0 auto;
     max-width: 950px;
 }
-
-.container {
+.homepage{
+    text-align: center;
+    font-size: large; 
+}
+ body {
+background-color: rgb(247, 227, 227)
+}
+.bg-image {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJy07PvDRnZz_m9rL0igZHAEBdQm5MnycxIw&usqp=CAU');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-attachment: fixed; 
+    height: 50vh;
+}
+.homebanner {
+    margin: 0 auto;
+    max-width: 960px;
+ }
+ .headinghome{
+    text-align: center;
+    padding-top:10px;
+    padding-bottom:10px;
+ }
+button {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: rgb(228, 225, 239);
+    border: none;
+    width: 150px;
+    font-size: 18px;
+    transition: 0.5s;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+ button:hover {
+    background-color: #556cf0;
+    width: 200px;
+    color: white;
+}
+h1 {
+    text-shadow: 2px 2px 4px #7f7878
+}
+.hidden {
+    display: none;
+    position: absolute;
+}
+.canvas-page {
     margin: 0 auto;
     max-width: 960px;
 }
-/* 
-h1 {
-    background: #7F7FD5;
-    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
-    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.container {
-    height: 100%;
-    display: flex;
-}
-
-#toolbar {
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    width: 70px;
-    background-color: #202020;
-}
-
-#toolbar * {
-    margin-bottom: 6px;
-}
-
-#toolbar label {
-    font-size: 12px;
-}
-
-#toolbar input {
-    width: 100%;
-}
-
-#toolbar button {
-    background-color: #1565c0;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    padding: 2px;
-}
-
-.drawing-board {
-    background-color: pink;
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    width: 800px;
-}
- */
-
- canvas {
-    background-color: pink;
- }
