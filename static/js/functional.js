@@ -25,7 +25,6 @@ function makeMessage(x, y) {
 
 function receiveMessages(messageEvent, ctx) {
     let message = JSON.parse(messageEvent.data);
-    console.log(message, roomId)
     if (message.room === roomId)  {
     
     draw(message, ctx);
@@ -98,12 +97,4 @@ function erase(message, ctx) {
     ctx.lineTo(message.x, message.y);
     ctx.stroke();
 }
-
-// function text(message, ctx) {
-//     let text = prompt("Text:", "");
-//     if (text) {
-//         let ctx.beginPath(message.x)
-//         console.log(pos)
-//     }
-// }
 

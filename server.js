@@ -27,7 +27,6 @@ socketServer.on('connection', ws => {
 
     socketServer.clients.forEach(c => {
       c.send(message);
-      console.log(message)
     });
   });
 });
@@ -45,7 +44,6 @@ let rooms = {};
 
 socketServer.on('connection', function connection(ws) {
   ws.on('message', function message(data) {
-    console.log("hello woeld")
     const obj = JSON.parse(data);
     const type = obj.type;
     const params = obj.params;
@@ -65,7 +63,6 @@ socketServer.on('connection', function connection(ws) {
 
 
       default:
-          console.warn(`Type: ${type} unknown`);
         break;
     }
   });
@@ -93,9 +90,7 @@ function generalInformation(ws) {
 }
 
 function create(params) {
-  console.log('function called.')
   const room = genKey(5);
-  console.log(room);
   rooms[room] = [ws];
   ws["room"] = room;
 
