@@ -6,19 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Canvas</title>
+    <script>
+        function myFunction() { 
+            document.getElementById("container").style.visibility="hidden"; 
+        }
+    </script>
 </head>
 <body>
-    <h1 class='headinghome'>Wellcome to Canvas</h1>
-    <!-- Background image -->
-    <div class="bg-image"></div>
-    <br>
-    <!-- Background image -->
-    <div class="homepage">
-        <p>
-            Welcome to artsy.io the collaborative drawing space, click through to canvas or make a private room
-        </p>
-    </div>
-  <button onclick="window.location='www.google.com';" class="btn" id="button" >Click Me to Start</button>
+    <div id="container">
+        <h1 class='headinghome'>Wellcome to Canvas</h1>
+        <!-- Background image -->
+        <div class="bg-image"></div>
+        <br>
+        <!-- Background image -->
+        <div class="homepage">
+            <p>
+                Welcome to artsy.io the collaborative drawing space, click through to canvas or make a private room
+            </p>
+        </div>
+    <button onclick='myFunction()' class="btn" id="button" >Click Me to Start</button>
+</div>
 </body>
 </html>
 
