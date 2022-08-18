@@ -98,3 +98,29 @@ function erase(message, ctx) {
     ctx.stroke();
 }
 
+/// 
+var roomId = undefined
+		const ws = new WebSocket("ws://localhost:3000");
+
+		ws.onopen = function (event) {}
+
+		ws.onmessage = function (event) {
+			console.log(event.data);
+			const data = JSON.parse(event.data)
+			if (data && data.params && data.params.room){
+			document.getElementById("roomId").innerText = data["params"]["room"];
+			roomId = data.params.room;
+			};
+		
+		}
+
+		function create() { ws.send('{ "type": "create" }'); }  //ws.send communicates with the server(rooms.js)
+
+		function join() {
+			const code = document.getElementById("room-code").value;
+			const obj = { "type": "join" , "params": { "code": code }}
+			ws.send(JSON.stringify(obj));
+			roomId = code
+		}
+
+		function leave() { ws.send('{ "type": "leave" }'); }
