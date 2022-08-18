@@ -19,6 +19,41 @@
   </select>
 
   <canvas></canvas>
+  <p><b id="roomId"></b></p>
+  <button onclick="create()">Create</button>
+  <input type="text" name="room-code" id="room-code">
+  <button onclick="join()">Join</button>
+  <button onclick="leave()">Leave</button>
+  
+
+  <script>
+    var roomId = undefined
+    const ws = new WebSocket("ws://localhost:3000");
+
+    ws.onopen = function (event) {}
+
+    ws.onmessage = function (event) {
+        console.log(event.data);
+        const data = JSON.parse(event.data)
+        if (data && data.params && data.params.room){
+          document.getElementById("roomId").innerText = data["params"]["room"];
+          roomId = data.params.room;
+        };
+       
+    }
+
+    function create() { ws.send('{ "type": "create" }'); }  //ws.send communicates with the server(rooms.js)
+
+    function join() {
+        const code = document.getElementById("room-code").value;
+        const obj = { "type": "join" , "params": { "code": code }}
+        ws.send(JSON.stringify(obj));
+        roomId = code
+    }
+
+    function leave() { ws.send('{ "type": "leave" }'); }
+</script>
+
   <script src="js/jQuery.js"></script>
   <script src="js/functional.js"></script>
   <script src="js/app.js"></script>

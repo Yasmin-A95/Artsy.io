@@ -6,6 +6,7 @@ function makeMessage(x, y) {
             y: y,
             width: $("#width").val(),
             color: $("#color").val(),
+            room:roomId
         }
         return message;
     } 
@@ -15,6 +16,7 @@ function makeMessage(x, y) {
         y: y,
         width: $("#width").val(),
         color: "#ffffff",
+        room:roomId
     }
     return message;
 };
@@ -22,8 +24,14 @@ function makeMessage(x, y) {
 
 function receiveMessages(messageEvent, ctx) {
     let message = JSON.parse(messageEvent.data);
+    console.log(message, roomId)
+    if (message.room === roomId )  {
+    
     draw(message, ctx);
-    console.log(message)
+   }
+
+    // let message = JSON.parse(messageEvent.data);
+    // draw(message, ctx);
 };
 
 
