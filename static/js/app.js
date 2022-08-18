@@ -62,5 +62,6 @@ canvas.addEventListener("mousemove", handleMouseMove);
 
 connection.onmessage = e => {
     receiveMessages(e, ctx);
+    
 };
 
