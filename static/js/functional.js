@@ -34,7 +34,6 @@ function sendMessage(message, connection) {
 function draw (message, ctx) {
     if (message.tool === "line") {
     drawLine(message, ctx)
-    console.log('drawLine is the thing')
     } else if (message.tool === "spray") {
         sprayPaint(message, ctx)
     } else if (message.tool === "erase") {
@@ -56,7 +55,6 @@ function drawLine(message, ctx) {
 };
 
 function sprayPaint (message, ctx) {
-    console.log('graffiti is illegal');
     // have it be like line except instead of a block space its a radius where pixels are selected at random within said radius
     // make a radius based on width
     // dots
