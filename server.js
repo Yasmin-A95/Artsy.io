@@ -103,7 +103,7 @@ function create(params) {
 
   generalInformation(ws);
 }
-const roomName = undefined
+let roomName = undefined
 function genKey(length) {
   let result = '';
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
