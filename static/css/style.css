@@ -10,7 +10,7 @@
 background-color: rgb(247, 227, 227)
 }
 .bg-image {
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJy07PvDRnZz_m9rL0igZHAEBdQm5MnycxIw&usqp=CAU');
+    margin: 0 auto;
     background-repeat: no-repeat;
     background-size: cover; 
     background-attachment: fixed; 
