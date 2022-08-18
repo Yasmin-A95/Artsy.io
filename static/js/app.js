@@ -65,3 +65,8 @@ connection.onmessage = e => {
     
 };
 
+//
+function revelHandlerBtn(){
+    $("#homePageContainer").addClass('hidden')
+    $("#canvas-page").removeClass('hidden')
+}  
