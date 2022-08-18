@@ -6,6 +6,9 @@ html {
     background-color: rgb(255, 109, 189)
 }
 
+img {
+    padding-left: 5em;
+}
 .inherit-font {
     font-family: 'Press Start 2P', cursive;
 }
