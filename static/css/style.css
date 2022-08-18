@@ -7,7 +7,7 @@
     font-size: large; 
 }
  body {
-background-color: rgb(244, 197, 197)
+background-color: rgb(247, 227, 227)
 }
 .bg-image {
     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJy07PvDRnZz_m9rL0igZHAEBdQm5MnycxIw&usqp=CAU');
@@ -47,4 +47,8 @@ h1 {
 .hidden {
     display: none;
     position: absolute;
+}
+.canvas-page {
+    margin: 0 auto;
+    max-width: 960px;
 }

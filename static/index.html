@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-welcoming
+
 <div id="homePageContainer">
   	<h1 class='headinghome'>Wellcome to Canvas</h1>
 	<!-- Background image -->
@@ -34,11 +34,6 @@ welcoming
 			$("#canvas-page").removeClass('hidden')
 		}  
 	</script>
-
-
-
-
-
 	<!-- //////// -->
 	Color: <input id="color" value="pink" type="color">
 	Width: <input id="width" type="number" value="10">
@@ -58,7 +53,6 @@ welcoming
 	<button onclick="join()">Join</button>
 	<button onclick="leave()">Leave</button>
 	
-
 	<script>
 		var roomId = undefined
 		const ws = new WebSocket("ws://localhost:3000");
