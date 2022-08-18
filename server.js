@@ -15,11 +15,7 @@ app.use('/', express.static(path.join(__dirname, 'static'))) // app.use means us
 app.use(bodyParser.json()) // giving app the parser
 
 const port = process.env.PORT || 3000;
-
-
-
 const server = require('http').createServer();
-
 const WebSocket = require('ws');
 const socketServer = new WebSocket.Server({ server:server });
 
@@ -31,6 +27,7 @@ socketServer.on('connection', ws => {
     
     socketServer.clients.forEach(c => {
       c.send(message);
+      console.log(message)
     });
   });
 });
