@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Hello!</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  Color: <input id="color" value="pink" type="color">
-  Width: <input id="width" type="number" value="10">
-
-  <label for="tool-select">Tool:&nbsp;</label>
-  <select class="custom-select" id="tool-select">
-    <option value="line">Line</option>
-    <option value="erase">Erase</option>
-    <option value="spray">Spray</option>
-  </select>
-
-  <canvas></canvas>
-  <script src="js/jQuery.js"></script>
-  <script src="js/functional.js"></script>
-  <script src="js/app.js"></script>
-</body>
-
+  <head>
+    <title>Hello!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="css/style.css">
+  </head>  
+  <body>
+    <div id="canvas-outside-container">
+    <div id="canvas-container">
+      <div id="canvas-inside-container"></div>
+      <canvas></canvas>
+      <div id="tools">
+        Color: <input id="color" class="toolinput" value="pink">
+        Width: <input id="width" class="toolinput" type="number" value="10">
+      </div>
+    </div>
+  </div>
+    <script src="js/drawingscript.js"></script>
+  </body>
 </html>
-
