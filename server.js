@@ -60,8 +60,6 @@ socketServer.on('connection', function connection(ws) {
       case "leave":
         leave(params);
         break;  
-
-
       default:
         break;
     }
