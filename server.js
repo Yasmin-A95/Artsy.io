@@ -1,4 +1,3 @@
-const dotenv = require('dotenv').config()
 const express = require('express') // creates our routes
 const path = require('path')
 const bodyParser = require('body-parser') //  middleware, parses json to express
@@ -37,9 +36,6 @@ server.listen(port, () => {
 })
 
 server.on('request', app);
-
-
-
 
 /////////////////////////////////
 
@@ -120,14 +116,13 @@ function genKey(length) {
 
 function join(params) {
   const room = params.code;
-  console.log('trying to join', room);
   if (!Object.keys(rooms).includes(room)) {
-    console.warn(`Room ${room} does not exist!`);
+    alert(`Room ${room} does not exist!`);
     return;
   }
 
   if (rooms[room].length >= maxClients) {
-    console.warn(`Room ${room} is full!`);
+    alert(`Room ${room} is full!`);
     return;
   }
 
@@ -150,17 +145,10 @@ function leave(params) {
 
 function close(room) {
   rooms = rooms.filter(key => key !== room);
-}
-
-  
-  
-  
-  
+  }
 });
 
 
-
-// rooms[room].forEach(cl => cl.send(...));
 
 
 
