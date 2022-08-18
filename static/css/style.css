@@ -6,6 +6,10 @@ html {
     background-color: rgb(255, 109, 189)
 }
 
+h1 {
+    text-shadow: 2px 2px 4px #7f7878
+}
+
 img {
     padding-left: 5em;
 }
@@ -24,6 +28,17 @@ img {
     font-size: large;
 }
 
+.canvas-page {
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+
+.homebanner {
+    margin: 0 auto;
+    max-width: 960px;
+}
+
 .bg-image {
     margin: 0 auto;
     background-repeat: no-repeat;
@@ -32,10 +47,6 @@ img {
     height: 50vh;
 }
 
-.homebanner {
-    margin: 0 auto;
-    max-width: 960px;
-}
 
 .headinghome {
     text-align: center;
@@ -63,16 +74,8 @@ button:hover {
     color: white;
 }
 
-h1 {
-    text-shadow: 2px 2px 4px #7f7878
-}
-
 .hidden {
     display: none;
     position: absolute;
 }
 
-.canvas-page {
-    margin: 0 auto;
-    max-width: 960px;
-}
