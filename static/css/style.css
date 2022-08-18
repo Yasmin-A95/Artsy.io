@@ -3,57 +3,70 @@
 html {
     text-align: center;
     font-family: 'Press Start 2P', cursive;
+    background-color: rgb(255, 109, 189)
 }
+
+.inherit-font {
+    font-family: 'Press Start 2P', cursive;
+}
+
 .outter-most-container {
+    padding-top: 3em;
     margin: 0 auto;
     max-width: 950px;
 }
-.homepage{
+
+.homepage {
     text-align: center;
-    font-size: large; 
+    font-size: large;
 }
- body {
-background-color: rgb(247, 227, 227)
-}
+
 .bg-image {
     margin: 0 auto;
     background-repeat: no-repeat;
-    background-size: cover; 
-    background-attachment: fixed; 
+    background-size: cover;
+    background-attachment: fixed;
     height: 50vh;
 }
+
 .homebanner {
     margin: 0 auto;
     max-width: 960px;
- }
- .headinghome{
+}
+
+.headinghome {
     text-align: center;
-    padding-top:10px;
-    padding-bottom:10px;
- }
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 button {
-    max-width: 960px;
-    margin: 0 auto;
-    background-color: rgb(228, 225, 239);
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: rgb(106, 78, 207);
     border: none;
     width: 150px;
     font-size: 18px;
     transition: 0.5s;
     border-radius: 12px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
- button:hover {
+
+button:hover {
     background-color: #556cf0;
     width: 200px;
     color: white;
 }
+
 h1 {
     text-shadow: 2px 2px 4px #7f7878
 }
+
 .hidden {
     display: none;
     position: absolute;
 }
+
 .canvas-page {
     margin: 0 auto;
     max-width: 960px;
