@@ -10,6 +10,12 @@ h1 {
     text-shadow: 2px 2px 4px #7f7878
 }
 
+canvas {
+    padding-top: 3em;
+    background-color: white;
+    width: 1000px;
+}
+
 img {
     padding-left: 5em;
 }
@@ -77,5 +83,9 @@ button:hover {
 .hidden {
     display: none;
     position: absolute;
+}
+
+.room-btn-container {
+    margin-bottom: 15em;
 }
 
