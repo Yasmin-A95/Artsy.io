@@ -8,7 +8,6 @@ function makeMessage(x, y) {
             color: $("#color").val(),
             room:roomId
         }
-        console.log(message)
         return message;
     } 
     let message = {
@@ -105,7 +104,6 @@ var roomId = undefined
 		ws.onopen = function (event) {}
 
 		ws.onmessage = function (event) {
-			console.log(event.data);
 			const data = JSON.parse(event.data)
 			if (data && data.params && data.params.room){
 			document.getElementById("roomId").innerText = data["params"]["room"];
