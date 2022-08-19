@@ -123,4 +123,6 @@ var roomId = undefined
 			roomId = code
 		}
 
-		function leave() { ws.send('{ "type": "leave" }'); }
+		function leave() { ws.send('{ "type": "leave" }');
+        window.location.reload()
+     }
