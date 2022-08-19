@@ -130,15 +130,22 @@ function join(params) {
 
 function leave(params) {
   const room = ws.room;
-	rooms[room] = rooms[room].filter(so => so !== ws);
+	if(rooms[room].filter){
+    rooms[room] = rooms[room].filter(so => so !== ws);
+  }
+  
   ws["room"] = undefined;
 
   if (rooms[room].length == 0)
     close(room);
-}
+
+  }
 
 function close(room) {
-  rooms = rooms.filter(key => key !== room);
+  if(rooms.filter){
+    rooms = rooms.filter(key => key !== room);
+  }
+  
   }
 });
 ////
