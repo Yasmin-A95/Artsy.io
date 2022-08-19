@@ -20,18 +20,20 @@
 <div id="canvas-page" class="hidden">
 
 	<!-- //////// -->
-	Color: <input id="color" value="pink" type="color">
-  Width: <input id="width" type="range" min="0" max=“100” value="90" step="10">
+  <div class="tools">
+    Color: <input id="color" value="pink" type="color">
+    Width: <input id="width" type="range" min="0" max=“100” value="90" step="10">
 
-  <label for="tool-select">Tool:&nbsp;</label>
- 	<select class="custom-select" id="tool-select">
-  <option value="line">Line</option>
-	<option value="erase">Erase</option>
-	<option value="spray">Spray</option>
-  </select>
+    <label for="tool-select">Tool:&nbsp;</label>
+      <select class="custom-select" id="tool-select">
+        <option value="line">Line</option>
+        <option value="erase">Erase</option>
+        <option value="spray">Spray</option>
+      </select>
+  </div>
 
   <canvas></canvas>
-  
+
   <div class="room-btn-container">
     <p id="roomId"></p>
     <button class="btn-small" onclick="create()">Create</button>
