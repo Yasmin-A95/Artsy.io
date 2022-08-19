@@ -18,6 +18,10 @@ canvas {
     width: 1000px;
 }
 
+.tools {
+    padding-bottom: 2em;
+}
+
 img {
     padding-left: 5em;
 }
