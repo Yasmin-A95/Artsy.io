@@ -23,22 +23,6 @@ function handleMouseMove(e) {
     sendMessage(makeMessage(e.offsetX, e.offsetY), connection);
     }
 };
-// touch events for mobile
-
-function handleTouchStart(e) {
-    isDrawing = true;
-    console.log("touch happened")
-};
-
-function handleTouchEnd(e) {
-    isDrawing = false;
-};
-
-function handleTouchMove(e) {
-    if (isDrawing){
-        sendMessage(makeMessage(e.offsetX, e.offsetY))
-    };
-};
 
 // attatch event handlers
 canvas.addEventListener("mousedown", handleMouseDown);
