@@ -90,7 +90,7 @@ function erase(message, ctx) {
     ctx.lineCap = "round";
     ctx.lineWidth = message.width;
     ctx.strokeStyle = message.color;
-    ctx.moveTo(message.lastX, message.lastY);
+    ctx.moveTo(message.x, message.y);
     ctx.lineTo(message.x, message.y);
     ctx.stroke();
 }
