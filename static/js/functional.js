@@ -54,7 +54,7 @@ function draw(message, ctx) {
 
 function drawLine(message, ctx) {
     ctx.beginPath();
-    ctx.lineWidth = 5;
+    ctx.lineWidth = message.width;
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
     ctx.strokeStyle = message.color;
