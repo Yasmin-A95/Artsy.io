@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 html {
-    text-align: center;
     font-family: 'Press Start 2P', cursive;
-    background-color: rgb(255, 109, 189)
+    overflow: hidden;
 }
 
 h1 {
@@ -11,13 +10,35 @@ h1 {
 }
 
 canvas {
-    margin-top: 3em;
     background-color: white;
-    width: 1000px;
+    height: 100vh;
+    width: 100vw;
+}
+.floaties {
+    text-align: center;
+    position: absolute;
+    position: absolute;
+    box-shadow: 6px 6px 0 #000;
+    border: 4px solid #000;
+    background: #eff;
+    font-size: 1em;
+    width: min-content;
+    margin-top: 1em;
+    padding: 1em;
+}
+.welcome {
+    text-align: center;
+    font-size: 0.8rem;
+    right: 2rem;
 }
 
 .tools {
-    padding-bottom: 2em;
+    text-align: left;
+    left: 2rem;
+    gap: 10px;
+    top: 48px;
+    left: 2em;
+    z-index: 103;
 }
 
 img {

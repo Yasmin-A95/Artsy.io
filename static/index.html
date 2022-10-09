@@ -1,49 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Artsy.io</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/normalise.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-
-<div class="outter-most-container " id="homePageContainer">
-  <h1 class='headinghome'>welcome to artsy.io the collaborative drawing space</h1>
-  <img class="bg-image" src="assets/yourbrainonart.png" alt="A colourful, abstract, and textured image of a painting.">
-
-	<div class="homepage">
-		<p>click through to canvas </p>
+  <div class="floaties welcome">
+    <p class='headinghome'>welcome to artsy.io the collaborative drawing space</p>
+    <p class='headinghome'>Draw live with friends and foe alike</p>
   </div>
-	<button class="btn inherit-font" id="button" onclick="toggleHidden()"> HERE </button>
-  </div>
-<div id="canvas-page" class="hidden">
 
-	<!-- //////// -->
-  <div class="tools">
+  <div class="floaties tools">
     Color: <input id="color" value="pink" type="color">
     Width: <input id="width" type="range" min="0" max=“100” value="90" step="10">
 
     <label for="tool-select">Tool:&nbsp;</label>
-      <select class="custom-select" id="tool-select">
-        <option value="line">Line</option>
-        <option value="erase">Erase</option>
-        <option value="spray">Spray</option>
-      </select>
+    <select class="custom-select" id="tool-select">
+      <option value="line">Line</option>
+      <option value="erase">Erase</option>
+      <option value="spray">Spray</option>
+    </select>
   </div>
 
   <canvas></canvas>
 
-  <div class="room-btn-container">
+  <!-- <div class="room-btn-container">
     <p id="roomId"></p>
     <button class="btn-small" onclick="create()">Create</button>
     <button class="btn-small" onclick="leave()">Leave</button>
     <button class="btn-small" onclick="join()">Join</button>
     <input type="text" name="room-code" id="room-code" placeholder="room key" required>
+  </div> -->
   </div>
-</div>
-<!--  end welcoming css  -->
- <!-- .___  .__                       .__  .__  _____                           .___ .__  .__                       ___.          .__                        .__  .__              
+  <!-- .___  .__                       .__  .__  _____                           .___ .__  .__                       ___.          .__                        .__  .__              
 |   | |  |   _______  __ ____   |  | |__|/ ____\____   _____    ____    __| _/ |__| |  |   _______  __ ____   \_ |__   ____ |__| ____    ____   _____  |  | |__|__  __ ____  
 |   | |  |  /  _ \  \/ // __ \  |  | |  \   __\/ __ \  \__  \  /    \  / __ |  |  | |  |  /  _ \  \/ // __ \   | __ \_/ __ \|  |/    \  / ___\  \__  \ |  | |  \  \/ // __ \ 
 |   | |  |_(  <_> )   /\  ___/  |  |_|  ||  | \  ___/   / __ \|   |  \/ /_/ |  |  | |  |_(  <_> )   /\  ___/   | \_\ \  ___/|  |   |  \/ /_/  >  / __ \|  |_|  |\   /\  ___/ 
