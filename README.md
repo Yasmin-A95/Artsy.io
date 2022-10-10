@@ -6,7 +6,7 @@ A drawing app you can use to get creative with your friends. Made by collaborati
 
 #### Marvel at it's Beauty
 
-![a bit art brain on fire with text that reads: welcome to artsy.io the collaborative drawing space, click through to canvas](static/assets/artsyhome.png)
+![a bit art brain on fire with text that reads: welcome to artsy.io the collaborative drawing space, click through to canvas](public/assets/artsyio.png)
 #### Tech Stack Includes:
 - mongodb
 - node.js
